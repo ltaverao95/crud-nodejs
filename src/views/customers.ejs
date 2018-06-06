@@ -1,0 +1,72 @@
+<% include partials/_header %>
+
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-12">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Surname</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if(data) { %>
+                            <% for(let i = 0; i < data.length; i++) { %>
+                                <tr>
+                                    <td>
+                                        <%= data[i].id %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].name %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].surname %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].email %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].phone %>
+                                    </td>
+                                    <td>
+                                        <a href="/delete/<%= data[i].id %>" class="btn btn-danger">Delete</a>
+                                        <a href="/update/<%= data[i].id %>" class="btn btn-info">Edit</a>
+                                    </td>
+                                </tr>
+                                <% } %>
+                                    <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/add" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Name" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="surname" placeholder="Surname" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="email" placeholder="Email" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="phone" placeholder="Phone" class="form-control" />
+                            </div>
+                            <button class="btn btn-primary" type="submit">Save Customer</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <% include partials/_footer %>

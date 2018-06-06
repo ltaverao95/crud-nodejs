@@ -1,0 +1,22 @@
+{
+  "name": "crud-nodejs",
+  "version": "1.0.0",
+  "description": "Basic crud with nodejs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  },
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "pg": "^7.4.3"
+  }
+}
