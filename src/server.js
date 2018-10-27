@@ -7,6 +7,7 @@ const app = express();
 
 //importing routes
 const customerRoutes = require('./routes/customer');
+const customerImagesRoutes = require('./routes/customerImages');
 
 // settings
 app.set('port', process.env.PORT || 3000);
@@ -19,6 +20,7 @@ app.use(express.urlencoded({extended: false}));
 
 //routes
 app.use('/', customerRoutes);
+app.use('/images', customerImagesRoutes);
 
 // static files
 app.use(express.static(path.join(__dirname, 'public')));
